@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Test RevoU Bootcamp</title>
+</head>
+
+
+<body class="bg-gray-100 min-h-screen">
+  <div class="container mx-auto max-w-2xl p-6 bg-white shadow-2xl rounded-2xl mt-10">
+    <header class="mb-8">
+      <h1 class="text-3xl font-extrabold text-red-600 text-center mb-2 tracking-wide">Hari Ke-2 Belajar di RevoU</h1>
+      <p class="text-center text-gray-500">Meningkatkan skill web development dengan Tailwind CSS</p>
+    </header>
+
+    <section class="bg-blue-500 text-white p-6 rounded-xl mb-8 shadow-md">
+      <h2 class="text-2xl font-bold mb-3 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.657 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" /></svg> My Biodata</h2>
+      <div class="grid grid-cols-2 gap-2 mb-2">
+        <div><span class="font-semibold">Nama:</span> Nurul Humam</div>
+        <div><span class="font-semibold">Usia:</span> 21</div>
+        <div><span class="font-semibold">Tl:</span> Pangkalpinang</div>
+      </div>
+      <div class="mb-2">
+        <span class="font-semibold">Hobi:</span>
+        <ul class="list-square list-inside ml-4">
+          <li>Berenang</li>
+          <li>Ngoding</li>
+          <li>Belajar</li>
+        </ul>
+      </div>
+      <div class="bg-blue-600 bg-opacity-80 rounded-lg p-3 mt-3">
+        <p class="text-sm">Mahasiswa Ilmu Komputer semester 6 di <span class="font-bold">Universitas Pertamina</span>. Memiliki fondasi kuat dalam <span class="font-bold">algoritma</span>, <span class="font-bold">struktur data</span>, dan <span class="font-bold">pengembangan perangkat lunak</span>. Sangat antusias untuk menerapkan kemampuan analisis dan problem-solving dalam kesempatan magang di bidang <span class="underline">Mobile App Development</span> dan <span class="underline">Web Development</span>. Berpengalaman memimpin tim, mulai dari perencanaan strategis hingga eksekusi program dalam berbagai kegiatan kampus.</p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <a href="#youtube" class="block text-blue-700 font-semibold text-center underline hover:text-blue-900 transition">Click Here for Training Software Engineering</a>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3 text-gray-700">Materi yang Dipelajari</h2>
+      <ol type="I" class="list-decimal list-inside ml-4 space-y-1">
+        <li>Belajar HTML</li>
+        <li>Belajar CSS</li>
+        <li>Belajar JavaScript</li>
+      </ol>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3 text-gray-700">Tabel Biodata</h2>
+      <div class="overflow-x-auto">
+        <table class="border-collapse w-full text-center shadow rounded-lg">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border px-4 py-2">Nama</th>
+              <th class="border px-4 py-2">Usia</th>
+              <th class="border px-4 py-2">Tl</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-blue-50">
+              <td class="border px-4 py-2">Nurul Humam</td>
+              <td class="border px-4 py-2">21</td>
+              <td class="border px-4 py-2">Pangkalpinang</td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="border px-4 py-2">Yura</td>
+              <td class="border px-4 py-2">21</td>
+              <td class="border px-4 py-2">Jakarta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-8 flex flex-col items-center">
+      <h2 class="text-xl font-semibold mb-3 text-gray-700">Gambar</h2>
+      <img src="gambar1.jpg" alt="gambar random" class="rounded-xl shadow-lg border-2 border-blue-200" width="200" height="200" />
+    </section>
+
+    <section class="mb-8">
+      <a href="https://youtu.be/fmEG0lvMFyE?si=y6xu7-opqP1ordgs" id="youtube" class="block text-blue-700 font-semibold text-center underline hover:text-blue-900 transition">Link ke Youtube</a>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-3 text-gray-700">Form Kontak</h2>
+      <form class="space-y-4 bg-gray-50 p-6 rounded-xl shadow">
+        <div>
+          <label for="name" class="block font-medium mb-1">Nama:</label>
+          <input type="text" id="name" name="name" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="email" class="block font-medium mb-1">Email:</label>
+          <input type="email" id="email" name="email" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="message" class="block font-medium mb-1">Pesan:</label>
+          <textarea id="message" name="message" rows="4" cols="50" placeholder="Tulis pesan Anda di sini..." class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+        <input type="submit" value="Kirim" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 cursor-pointer transition" />
+      </form>
+    </section>
+  </div>
+</body>
+
+</html>
