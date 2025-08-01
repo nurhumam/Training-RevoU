@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW - The Ultimate Driving Machine</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* BMW Blue gradient */
+        .bg-bmw-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        /* Car showcase animation */
+        .car-showcase {
+            transition: all 0.5s ease;
+        }
+        
+        .car-showcase:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(30, 58, 138, 0.2);
+        }
+        
+        /* BMW signature underline */
+        .bmw-underline {
+            position: relative;
+        }
+        
+        .bmw-underline::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #3b82f6;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER START -->
+    <header class="flex justify-between items-center p-4 bg-gray-900 text-white sticky top-0 z-50 shadow-lg border-b-2 border-blue-600">
+
+        <!-- LOGO -->
+        <div class="text-lg font-bold flex items-center">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                <span class="text-white font-bold text-xl">BMW</span>
+            </div>
+            <span class="text-xl">BMW Indonesia</span>
+        </div>
+        <!-- LOGO END -->
+
+        <!-- NAVIGATION -->
+        <nav class="hidden md:flex space-x-2">
+            <a class="border border-blue-600 rounded-[4px] px-[12px] py-[6px] hover:bg-blue-600 hover:text-white transition duration-300" href="#home">Home</a>
+            <a class="border border-blue-600 rounded-[4px] px-[12px] py-[6px] hover:bg-blue-600 hover:text-white transition duration-300" href="#about">About BMW</a>
+            <a class="border border-blue-600 rounded-[4px] px-[12px] py-[6px] hover:bg-blue-600 hover:text-white transition duration-300" href="#models">Our Models</a>
+            <a class="border border-blue-600 rounded-[4px] px-[12px] py-[6px] hover:bg-blue-600 hover:text-white transition duration-300" href="#contact">Contact</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <div class="w-6 h-0.5 bg-white mb-1"></div>
+            <div class="w-6 h-0.5 bg-white mb-1"></div>
+            <div class="w-6 h-0.5 bg-white"></div>
+        </button>
+        <!-- NAVIGATION END -->
+
+        <!-- Mobile Navigation -->
+        <nav id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-gray-900 border-t border-blue-600 md:hidden">
+            <a class="block px-4 py-3 hover:bg-blue-600 transition duration-300" href="#home">Home</a>
+            <a class="block px-4 py-3 hover:bg-blue-600 transition duration-300" href="#about">About BMW</a>
+            <a class="block px-4 py-3 hover:bg-blue-600 transition duration-300" href="#models">Our Models</a>
+            <a class="block px-4 py-3 hover:bg-blue-600 transition duration-300" href="#contact">Contact</a>
+        </nav>
+
+    </header>
+    <!-- HEADER END -->
+
+    <!-- MAIN START -->
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="min-h-screen flex items-center justify-center bg-bmw-gradient relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute transform rotate-45 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                    <div class="w-96 h-96 border-4 border-white rounded-full"></div>
+                    <div class="w-80 h-80 border-2 border-white rounded-full absolute top-8 left-8"></div>
+                </div>
+            </div>
+            
+            <div class="text-center p-8 relative z-10">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white bmw-underline">The Ultimate Driving Machine</h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">Experience the perfect blend of luxury, performance, and innovation with BMW. Every journey becomes an adventure.</p>
+                <div class="space-x-4">
+                    <a href="#models" class="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition duration-300 transform hover:scale-105 shadow-lg font-semibold">Explore Models</a>
+                    <a href="#about" class="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition duration-300 transform hover:scale-105 font-semibold">Learn More</a>
+                </div>
+                
+                <!-- Key Features -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">🏁</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Performance</h3>
+                        <p class="text-blue-100">Engineered for excellence</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">✨</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Luxury</h3>
+                        <p class="text-blue-100">Crafted with precision</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">🔧</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Innovation</h3>
+                        <p class="text-blue-100">Future-ready technology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- HOME SECTION END -->
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-20 bg-white">
+            <div class="text-center p-8 max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-800 bmw-underline">About BMW</h2>
+                <p class="text-xl mb-12 text-gray-600 leading-relaxed max-w-4xl mx-auto">Since 1916, BMW has been synonymous with performance, luxury, and innovation. We create vehicles that don't just transport you – they inspire you, connect with you, and elevate every moment of your journey.</p>
+                
+                <!-- BMW Heritage Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">100+</div>
+                        <div class="text-gray-600">Years of Excellence</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">2.5M+</div>
+                        <div class="text-gray-600">Cars Sold Annually</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">31</div>
+                        <div class="text-gray-600">Production Plants</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">140+</div>
+                        <div class="text-gray-600">Countries Worldwide</div>
+                    </div>
+                </div>
+                
+                <!-- Core Values -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <div class="p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                        <div class="text-5xl mb-6">�</div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800">Driving Pleasure</h3>
+                        <p class="text-gray-600 leading-relaxed">Every BMW is designed to deliver pure driving pleasure. From the first turn of the key to every mile on the road, we create moments of joy.</p>
+                    </div>
+                    <div class="p-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                        <div class="text-5xl mb-6">🔬</div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800">Innovation Leadership</h3>
+                        <p class="text-gray-600 leading-relaxed">We pioneer automotive technology, from efficient engines to autonomous driving, setting new standards for the industry.</p>
+                    </div>
+                    <div class="p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-sm hover:shadow-lg transition duration-300">
+                        <div class="text-5xl mb-6">🌍</div>
+                        <h3 class="font-bold text-2xl mb-4 text-gray-800">Sustainability</h3>
+                        <p class="text-gray-600 leading-relaxed">Committed to a sustainable future with electric mobility, circular economy, and responsible resource usage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ABOUT SECTION END -->
+
+        <!-- BMW MODELS SECTION -->
+        <section id="models" class="py-20 bg-gray-50">
+            <div class="text-center p-8 max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-800 bmw-underline">Our Vehicle Lineup</h2>
+                <p class="text-xl mb-16 text-gray-600 max-w-3xl mx-auto">Discover our complete range of luxury vehicles, from sporty sedans to powerful SUVs, each engineered to deliver the ultimate driving experience.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- BMW 3 Series -->
+                    <div class="bg-white rounded-2xl shadow-xl car-showcase overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center relative">
+                            <div class="text-6xl text-white">🚗</div>
+                            <div class="absolute top-4 right-4 bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold">POPULAR</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-3 text-gray-800">BMW 3 Series</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">The benchmark for sports sedans. Perfect balance of performance, luxury, and efficiency for the modern driver.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Engine:</span>
+                                    <span class="font-semibold">2.0L TwinPower Turbo</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Power:</span>
+                                    <span class="font-semibold">255 HP</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Price from:</span>
+                                    <span class="font-semibold text-blue-600">Rp 995,000,000</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- BMW X3 -->
+                    <div class="bg-white rounded-2xl shadow-xl car-showcase overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center relative">
+                            <div class="text-6xl text-white">🚙</div>
+                            <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">ECO</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-3 text-gray-800">BMW X3</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Versatile luxury SUV that combines commanding presence with BMW's signature driving dynamics and advanced technology.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Engine:</span>
+                                    <span class="font-semibold">2.0L TwinPower Turbo</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Power:</span>
+                                    <span class="font-semibold">248 HP</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Price from:</span>
+                                    <span class="font-semibold text-blue-600">Rp 1,199,000,000</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition duration-300 font-semibold">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- BMW i4 Electric -->
+                    <div class="bg-white rounded-2xl shadow-xl car-showcase overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center relative">
+                            <div class="text-6xl text-white">⚡</div>
+                            <div class="absolute top-4 right-4 bg-yellow-400 text-green-800 px-3 py-1 rounded-full text-sm font-bold">ELECTRIC</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-3 text-gray-800">BMW i4</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Pure electric driving pleasure. Zero emissions, maximum performance, and cutting-edge sustainable technology.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Motor:</span>
+                                    <span class="font-semibold">Electric Motor</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Power:</span>
+                                    <span class="font-semibold">340 HP</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Price from:</span>
+                                    <span class="font-semibold text-blue-600">Rp 1,399,000,000</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- BMW 5 Series -->
+                    <div class="bg-white rounded-2xl shadow-xl car-showcase overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center relative">
+                            <div class="text-6xl text-white">🏎️</div>
+                            <div class="absolute top-4 right-4 bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">LUXURY</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-3 text-gray-800">BMW 5 Series</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Executive luxury sedan that sets the standard for business-class mobility with intelligent technology and refined elegance.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Engine:</span>
+                                    <span class="font-semibold">2.0L TwinPower Turbo</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Power:</span>
+                                    <span class="font-semibold">252 HP</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Price from:</span>
+                                    <span class="font-semibold text-blue-600">Rp 1,599,000,000</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition duration-300 font-semibold">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- BMW X5 -->
+                    <div class="bg-white rounded-2xl shadow-xl car-showcase overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center relative">
+                            <div class="text-6xl text-white">🚐</div>
+                            <div class="absolute top-4 right-4 bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm font-bold">SUV</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-3 text-gray-800">BMW X5</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Premium SAV (Sports Activity Vehicle) offering uncompromising luxury, versatility, and commanding road presence.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Engine:</span>
+                                    <span class="font-semibold">3.0L TwinPower Turbo</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Power:</span>
+                                    <span class="font-semibold">335 HP</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Price from:</span>
+                                    <span class="font-semibold text-blue-600">Rp 1,899,000,000</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition duration-300 font-semibold">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- BMW M3 -->
+                    <div class="bg-white rounded-2xl shadow-xl car-showcase overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center relative">
+                            <div class="text-6xl text-white">🏁</div>
+                            <div class="absolute top-4 right-4 bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm font-bold">M SERIES</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-3 text-gray-800">BMW M3</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">High-performance sports sedan engineered for the track but refined for the street. Pure M Performance at its finest.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Engine:</span>
+                                    <span class="font-semibold">3.0L Twin-Turbo I6</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Power:</span>
+                                    <span class="font-semibold">473 HP</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-500">Price from:</span>
+                                    <span class="font-semibold text-blue-600">Rp 2,199,000,000</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition duration-300 font-semibold">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="mt-16 text-center">
+                    <div class="bg-blue-600 text-white p-8 rounded-2xl inline-block">
+                        <h3 class="text-2xl font-bold mb-4">Ready to Experience BMW?</h3>
+                        <p class="mb-6 text-blue-100">Schedule a test drive or visit our showroom to feel the ultimate driving machine.</p>
+                        <div class="space-x-4">
+                            <button class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition duration-300 font-semibold">Schedule Test Drive</button>
+                            <button class="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300 font-semibold">Find Dealer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- BMW MODELS SECTION END -->
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="text-center p-8 max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-800 bmw-underline">Contact BMW Indonesia</h2>
+                <p class="text-xl mb-16 text-gray-600 max-w-3xl mx-auto">Ready to experience the ultimate driving machine? Get in touch with our team for inquiries, test drives, or to find your nearest BMW dealer.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Send Us a Message</h3>
+                        <form class="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-lg">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-semibold mb-3 text-gray-700">Full Name *</label>
+                                    <input type="text" id="name" class="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none transition duration-300" placeholder="Enter your full name" required>
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-semibold mb-3 text-gray-700">Phone Number</label>
+                                    <input type="tel" id="phone" class="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none transition duration-300" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-sm font-semibold mb-3 text-gray-700">Email Address *</label>
+                                <input type="email" id="email" class="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none transition duration-300" placeholder="Enter your email address" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="interested-model" class="block text-sm font-semibold mb-3 text-gray-700">Interested Model</label>
+                                <select id="interested-model" class="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none transition duration-300">
+                                    <option value="">Select a BMW model</option>
+                                    <option value="3-series">BMW 3 Series</option>
+                                    <option value="5-series">BMW 5 Series</option>
+                                    <option value="x3">BMW X3</option>
+                                    <option value="x5">BMW X5</option>
+                                    <option value="i4">BMW i4 (Electric)</option>
+                                    <option value="m3">BMW M3</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-semibold mb-3 text-gray-700">Message *</label>
+                                <textarea id="message" rows="5" class="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none transition duration-300 resize-none" placeholder="Tell us about your inquiry or schedule a test drive..." required></textarea>
+                            </div>
+                            <button type="button" onclick="validateForm()" class="w-full bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 shadow-lg font-semibold">Send Message</button>
+                        </form>
+
+                        <div id="result-form" class="mt-6"></div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Get in Touch</h3>
+                        
+                        <!-- Contact Cards -->
+                        <div class="space-y-6 mb-8">
+                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border-l-4 border-blue-600">
+                                <div class="flex items-center mb-3">
+                                    <div class="text-2xl mr-4">📍</div>
+                                    <h4 class="font-bold text-lg text-gray-800">BMW Indonesia Headquarters</h4>
+                                </div>
+                                <p class="text-gray-600">Jl. Gajah Mada No. 3-5, Jakarta Pusat 10130, Indonesia</p>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl border-l-4 border-green-600">
+                                <div class="flex items-center mb-3">
+                                    <div class="text-2xl mr-4">📞</div>
+                                    <h4 class="font-bold text-lg text-gray-800">Call Center</h4>
+                                </div>
+                                <p class="text-gray-600">+62 21 2358 8888 (24/7 Support)</p>
+                                <p class="text-gray-600">0800-1-BMW-BMW (Toll Free)</p>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl border-l-4 border-purple-600">
+                                <div class="flex items-center mb-3">
+                                    <div class="text-2xl mr-4">📧</div>
+                                    <h4 class="font-bold text-lg text-gray-800">Email Support</h4>
+                                </div>
+                                <p class="text-gray-600">info@bmw.co.id</p>
+                                <p class="text-gray-600">sales@bmw.co.id</p>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-xl border-l-4 border-orange-600">
+                                <div class="flex items-center mb-3">
+                                    <div class="text-2xl mr-4">🕒</div>
+                                    <h4 class="font-bold text-lg text-gray-800">Business Hours</h4>
+                                </div>
+                                <p class="text-gray-600">Monday - Friday: 08:00 - 17:00 WIB</p>
+                                <p class="text-gray-600">Saturday: 08:00 - 15:00 WIB</p>
+                                <p class="text-gray-600">Sunday: Closed</p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-lg text-gray-800 mb-4">Quick Actions</h4>
+                            <button class="w-full bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold">Schedule Test Drive</button>
+                            <button class="w-full bg-gray-600 text-white p-4 rounded-lg hover:bg-gray-700 transition duration-300 font-semibold">Find Nearest Dealer</button>
+                            <button class="w-full bg-green-600 text-white p-4 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">Service Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CONTACT SECTION END -->
+    </main>
+    <!-- MAIN END -->
+
+    <!-- FOOTER START -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-xl">BMW</span>
+                        </div>
+                        <span class="text-2xl font-bold">BMW Indonesia</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Experience the ultimate driving machine. BMW has been setting the standard for luxury, performance, and innovation since 1916.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition duration-300">📘</a>
+                        <a href="#" class="bg-blue-400 hover:bg-blue-500 p-3 rounded-full transition duration-300">🐦</a>
+                        <a href="#" class="bg-pink-600 hover:bg-pink-700 p-3 rounded-full transition duration-300">📷</a>
+                        <a href="#" class="bg-red-600 hover:bg-red-700 p-3 rounded-full transition duration-300">📺</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-6">BMW Models</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#models" class="text-gray-300 hover:text-blue-400 transition duration-300">3 Series</a></li>
+                        <li><a href="#models" class="text-gray-300 hover:text-blue-400 transition duration-300">5 Series</a></li>
+                        <li><a href="#models" class="text-gray-300 hover:text-blue-400 transition duration-300">X3 SUV</a></li>
+                        <li><a href="#models" class="text-gray-300 hover:text-blue-400 transition duration-300">X5 SUV</a></li>
+                        <li><a href="#models" class="text-gray-300 hover:text-blue-400 transition duration-300">i4 Electric</a></li>
+                        <li><a href="#models" class="text-gray-300 hover:text-blue-400 transition duration-300">M Series</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-xl mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Test Drive</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Service Center</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Parts & Accessories</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">BMW Financial</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">Insurance</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">BMW ConnectedDrive</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <p class="text-gray-300 text-sm">BMW Indonesia - Authorized BMW Dealer & Service Center</p>
+                        <p class="text-gray-400 text-sm mt-1">© 2025 BMW Group. All rights reserved.</p>
+                    </div>
+                    <div class="md:text-right">
+                        <div class="flex flex-wrap gap-4 md:justify-end">
+                            <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition duration-300">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition duration-300">Terms of Service</a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition duration-300">Cookie Settings</a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition duration-300">Careers</a>
+                        </div>
+                        <p class="text-gray-400 text-xs mt-2">The Ultimate Driving Machine™</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <!-- SCRIPTS START -->
+    <script src="js/script.js"></script>
+</body>
+</html>
